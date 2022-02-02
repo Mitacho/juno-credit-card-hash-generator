@@ -43,10 +43,16 @@
 body {
   background-color: var(--black-color);
   color: var(--text-secondary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {
   min-height: 100vh;
+  width: 100%;
+  max-width: 40rem;
   padding: 4rem 1rem;
   flex: 1;
   display: flex;
@@ -127,7 +133,7 @@ fieldset {
 }
 
 @media (max-width: 600px) {
-  main {
+  .main {
     padding: 0;
   }
 
