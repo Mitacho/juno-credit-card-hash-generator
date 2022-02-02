@@ -16,7 +16,7 @@
 
 @media (max-width: 600px) {
   .credit-card__form {
-    padding: 1rem 0.5rem;
+    width: 100%;
   }
   .expiration-date > input {
     width: 100%;

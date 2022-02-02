@@ -1,11 +1,12 @@
 .settings {
-  height: 100vh;
+  max-height: 100vh;
   inset: 0;
   z-index: 2;
   position: fixed;
   background-color: var(--black-color);
   display: flex;
   justify-content: center;
+  overflow-y: auto;
 }
 
 .settings > main {
