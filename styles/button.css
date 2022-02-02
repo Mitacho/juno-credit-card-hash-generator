@@ -12,6 +12,7 @@ button {
   font-weight: 500;
   cursor: pointer;
   transition: filter 150ms linear;
+  position: relative;
 }
 
 button.p-m {
@@ -46,6 +47,23 @@ button.highlight {
 .icon-border {
   border: 0.15rem solid var(--gray-secondary-color);
   padding: 0.25rem;
+}
+
+.notification::before {
+  background-color: var(--red-color);
+  width: auto;
+  min-height: 1rem;
+  padding: 0 0.25rem;
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  border-radius: 0.75rem;
+  border: 0.15rem solid var(--black-color);
+  text-align: right;
+  font-size: 0.8125rem;
+  font-weight: bold;
+  color: var(--black-color);
+  content: attr(data-content);
 }
 
 @media (max-width: 640px) {

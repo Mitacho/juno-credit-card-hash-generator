@@ -8,15 +8,17 @@ const infoFieldEl = document.getElementById("info-field");
 const publicKeyInputEl = document.getElementById("public-key");
 const sandboxCheckboxEl = document.getElementById("sandbox");
 const mainHeaderEl = document.getElementById("main-header");
+const notificationEl = document.getElementById("notification");
+const publicKeyErrorField = document.getElementById("public-key-error-field");
 
+let notifications = 1;
 let publicKey = "";
 let sandbox = true;
-let checkout = sandbox
-  ? new DirectCheckout(publicKey, false)
-  : new DirectCheckout(publicKey);
+let checkout = null;
 
 publicKeyInputEl.value = publicKey;
-sandboxCheckboxEl.checked = sandbox;
+// sandboxCheckboxEl.checked = sandbox;
+publicKeyErrorField.innerHTML = "você precisa informar uma chave pública";
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -36,19 +38,48 @@ function toggleModal(id) {
   }
 }
 
+function updateNotifications() {
+  if (notifications === 0) {
+    notificationEl.classList.remove("notification");
+  } else {
+    notificationEl.classList.add("notification");
+  }
+
+  notificationEl.setAttribute("data-content", notifications);
+}
+
 function updatePublicKey(key, sandbox) {
   /* Em sandbox utilizar o construtor new DirectCheckout('PUBLIC_TOKEN', false); */
   checkout = sandbox ? new DirectCheckout(key, false) : new DirectCheckout(key);
   publicKey = key;
+  updateNotifications();
 }
 
 function onUpdatePublicKey(el) {
   const key = el.value;
   const keyNotUpdated = key === publicKey;
 
+  notifications = notifications > 0 ? notifications : notifications + 1;
+
+  if (key === "") {
+    updateNotifications();
+    publicKeyErrorField.removeAttribute("hidden");
+    publicKeyErrorField.innerHTML = "você precisa informar uma chave pública";
+    return;
+  } else if (key.length < 50) {
+    updateNotifications();
+    publicKeyErrorField.removeAttribute("hidden");
+    publicKeyErrorField.innerHTML =
+      "você precisa informar uma chave pública válida";
+    return;
+  }
+
   if (keyNotUpdated) {
     return;
   }
+
+  notifications -= 1;
+  publicKeyErrorField.setAttribute("hidden", "");
 
   updatePublicKey(key, sandbox);
 }

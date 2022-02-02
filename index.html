@@ -10,7 +10,12 @@
   <body>
     <header id="main-header" class="header">
       <nav class="nav">
-        <button class="icon-button" onclick="toggleModal('settings')">
+        <button
+          id="notification"
+          class="icon-button notification"
+          data-content="1"
+          onclick="toggleModal('settings')"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon"
@@ -157,6 +162,11 @@
                     id="public-key"
                     onkeyup="onUpdatePublicKey(this)"
                   />
+                  <h3
+                    id="public-key-error-field"
+                    class="break-word error-field mt-100"
+                  ></h3>
+
                   <!-- <div class="mt-100">
                     <input
                       type="checkbox"
