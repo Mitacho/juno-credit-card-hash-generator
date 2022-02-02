@@ -123,6 +123,13 @@ function formElementState(state) {
 function handleFormSubmit(e) {
   e.preventDefault();
 
+  if (!checkout) {
+    errorFieldEl.removeAttribute("hidden");
+    errorFieldEl.innerHTML = "Você precisa informar uma chave pública válida";
+
+    return;
+  }
+
   formElementState("submitting");
 
   const formData = new FormData(e.target);
