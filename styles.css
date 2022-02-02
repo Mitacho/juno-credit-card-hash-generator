@@ -1,0 +1,137 @@
+@import url("./styles/layout.css");
+@import url("./styles/size.css");
+@import url("./styles/text.css");
+@import url("./styles/spacing.css");
+@import url("./styles/spinner.css");
+@import url("./styles/button.css");
+@import url("./styles/navbar.css");
+@import url("./styles/input.css");
+@import url("./styles/form.css");
+@import url("./styles/aside.css");
+
+@font-face {
+  font-family: "Circular Std";
+  src: url("./assets/fonts/circular-std-medium-500.ttf");
+  font-weight: 400;
+}
+
+:root {
+  --black-color: #171717;
+  --bg-primary-color: #202124;
+  --bg-secondary-color: #303134;
+  --text-primary-color: #e8eaed;
+  --text-secondary-color: #bdc1c6;
+  --gray-primary-color: #949494;
+  --gray-secondary-color: #5f6368;
+  --blue-color: #8ab4f8;
+  --red-color: #d17777;
+  --border-radius-s: 0.25rem;
+  --border-radius-m: 0.5rem;
+  --box-shadow: 0 1px 6px 0 var(--black-color);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Circular Std";
+  font-weight: 400;
+}
+
+body {
+  background-color: var(--black-color);
+  color: var(--text-secondary-color);
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem 0;
+  position: sticky;
+  top: 0;
+  background-color: var(--black-color);
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  max-width: 30rem;
+  padding: 0.5rem 0.325rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary-color);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.325rem;
+}
+
+fieldset {
+  outline: none;
+  border: none;
+}
+
+.form-helper-text {
+  hyphens: auto;
+  display: block;
+  margin-top: 0.325rem;
+  color: var(--gray-secondary-color);
+}
+
+.text-secondary-color {
+  color: var(--text-secondary-color);
+}
+
+.mount-unmount-transition {
+  transition: opacity 250ms, visibility 250ms, transform 500ms;
+}
+
+.mount {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.unmount {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50%);
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 0;
+  }
+
+  .nav {
+    padding: 0.5rem 1rem;
+  }
+}

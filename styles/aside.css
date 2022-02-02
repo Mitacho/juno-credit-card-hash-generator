@@ -1,0 +1,25 @@
+.settings {
+  height: 100vh;
+  inset: 0;
+  z-index: 2;
+  position: fixed;
+  background-color: var(--black-color);
+  display: flex;
+  justify-content: center;
+}
+
+.settings > main {
+  width: 100%;
+  max-width: 40rem;
+  padding: 4rem 1rem;
+}
+
+.settings nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.article__header {
+  margin-bottom: 2rem;
+}

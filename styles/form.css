@@ -1,0 +1,28 @@
+.credit-card__form {
+  display: grid;
+  gap: 1rem;
+  max-width: 40rem;
+  padding: 1rem;
+  border-radius: var(--border-radius-s);
+}
+
+.error-field {
+  color: var(--red-color);
+}
+
+.info-field {
+  color: var(--blue-color);
+}
+
+@media (max-width: 600px) {
+  .credit-card__form {
+    padding: 1rem 0.5rem;
+  }
+  .expiration-date > input {
+    width: 100%;
+    margin-bottom: 0.325rem;
+  }
+  .expiration-date > input:last-of-type {
+    margin-bottom: 0;
+  }
+}

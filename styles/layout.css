@@ -1,0 +1,43 @@
+.grid {
+  display: grid;
+}
+
+.grid .gap-100 {
+  gap: 1rem;
+}
+
+.gap-200 {
+  gap: 2rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.flex-direction-row {
+  flex-direction: row;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}

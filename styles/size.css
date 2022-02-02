@@ -1,0 +1,39 @@
+.full-width {
+  width: 100%;
+}
+
+.mw-200 {
+  max-width: 20rem;
+}
+
+.mw-400 {
+  max-width: 40rem;
+}
+
+.w-200 {
+  width: 20rem;
+}
+
+.w-400 {
+  width: 40rem;
+}
+
+.font-size-50 {
+  font-size: 0.5rem;
+}
+
+.font-size-100 {
+  font-size: 1rem;
+}
+
+.font-size-120 {
+  font-size: 1.2rem;
+}
+
+.font-size-150 {
+  font-size: 1.5rem;
+}
+
+.font-size-200 {
+  font-size: 2rem;
+}
